@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Blog" ALTER COLUMN "publishedAt" SET DATA TYPE TIMESTAMP(3);

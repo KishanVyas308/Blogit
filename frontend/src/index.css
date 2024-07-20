@@ -1,3 +1,52 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Custom styles for blog page */
+.prose-custom h1 {
+  @apply text-4xl font-bold text-gray-50;
+}
+
+.prose-custom h2 {
+  @apply text-3xl font-bold text-gray-100;
+}
+
+.prose-custom h3 {
+  @apply text-2xl font-semibold text-gray-200;
+}
+
+.prose-custom h4 {
+  @apply text-xl font-semibold text-blue-200;
+}
+
+.prose-custom p {
+  @apply  text-gray-200 text-lg;
+}
+
+.prose-custom a {
+  @apply text-blue-500 underline hover:text-blue-700;
+}
+
+.prose-custom blockquote {
+  @apply border-l-4 border-gray-400 italic text-gray-200 pl-4;
+}
+
+.prose-custom ul {
+  @apply list-disc pl-6;
+}
+
+.prose-custom ol {
+  @apply list-decimal pl-6;
+}
+
+.prose-custom code {
+  @apply text-rose-600 bg-gray-100 p-1 rounded;
+}
+
+.prose-custom pre {
+  @apply text-rose-600 bg-gray-100 p-4 rounded;
+}
+
+.prose-custom img {
+  @apply rounded-lg max-w-full;
+}

@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 import { BACKEND_URL } from "../config";
 import axios from "axios";
+import { useRecoilState } from "recoil";
+import blogsAtom from "../atoms/blogsAtom";
+
+
 
 export interface Blog {
       content: string,
@@ -12,21 +16,31 @@ export interface Blog {
       publishedAt: string
 }
 
+
+
 export const useBlogs = () => {
+
     const [loading, setLoading] = useState(true);
-    const [blogs, setBlogs] = useState<Blog[]>([]);
+    const [blogs, setBlogs] = useRecoilState<Blog[]>(blogsAtom);
+
+     const fetchBlogs = async () => {
+        const res = await axios.get(`${BACKEND_URL}/api/v1/blog/bulk`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+        });
+        setBlogs(res.data.blogs);
+        setLoading(false);
+    }   
 
     useEffect(() => {
-        const fetchBlogs = async () => {
-            const res = await axios.get(`${BACKEND_URL}/api/v1/blog/bulk`, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem("token")}`
-                }
-            });
-            setBlogs(res.data.blogs);
+       
+        if(blogs.length === 0) {
+            fetchBlogs();
+        }
+        else {
             setLoading(false);
-        }   
-        fetchBlogs();
+        }
     }, [])
 
     return {
@@ -40,6 +54,7 @@ export const useBlog = ({id} : {id : string}) => {
 
     useEffect(() => {
         const fetchBlogs = async () => {
+            setLoading(true);
             const res = await axios.get(`${BACKEND_URL}/api/v1/blog/${id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`

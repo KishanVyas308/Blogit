@@ -1,0 +1,43 @@
+/* Custom CSS for dark mode ReactQuill editor */
+.ql-container.ql-snow {
+    background-color: #1f2937; /* Tailwind gray-800 */
+    color: #e5e7eb; /* Tailwind gray-200 */
+    border: none;
+  }
+  
+  .ql-toolbar.ql-snow {
+    background-color: #374151; /* Tailwind gray-700 */
+    border: none;
+  }
+  
+  .ql-toolbar.ql-snow .ql-picker {
+    color: #e5e7eb; /* Tailwind gray-200 */
+  }
+  
+  .ql-toolbar.ql-snow .ql-stroke {
+    stroke: #e5e7eb; /* Tailwind gray-200 */
+  }
+  
+  .ql-toolbar.ql-snow .ql-fill {
+    fill: #e5e7eb; /* Tailwind gray-200 */
+  }
+  
+  .ql-toolbar.ql-snow .ql-picker-item.ql-active,
+  .ql-toolbar.ql-snow .ql-picker-item:hover,
+  .ql-toolbar.ql-snow .ql-picker-options {
+    color: #d1d5db; /* Tailwind gray-300 */
+  }
+  
+  .ql-toolbar.ql-snow .ql-picker-label.ql-active,
+  .ql-toolbar.ql-snow .ql-picker-label:hover {
+    color: #d1d5db; /* Tailwind gray-300 */
+  }
+  
+  .ql-editor {
+    min-height: 200px;
+  }
+  
+  .ql-editor.ql-blank::before {
+    color: #9ca3af; /* Tailwind gray-400 */
+  }
+  

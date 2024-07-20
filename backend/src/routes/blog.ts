@@ -85,7 +85,7 @@ const { success } = updateBlogInput.safeParse(body);
     data: {
       title: body.title,
       content: body.content,
-     
+      
     },
   });
   return c.json({
@@ -104,6 +104,7 @@ blogRouter.get("/bulk",async (c) => {
       content: true,
       title: true,
       id: true,
+      publishedAt: true,
       author: {
         select: {
           name: true,
@@ -130,6 +131,7 @@ blogRouter.get("/:id", async (c) => {
         title : true,
         content : true,
         id: true,
+        publishedAt: true,
         author : {
           select : {
             name : true
