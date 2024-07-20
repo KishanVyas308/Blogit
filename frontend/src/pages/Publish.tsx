@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import{ useState } from "react";
 import Appbar from "../components/Appbar";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
