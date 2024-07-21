@@ -28,7 +28,7 @@ const Quote = () => {
 
   return (
     <div className="flex flex-col justify-center items-center w-full h-full p-8 text-center text-white">
-      <div className="text-3xl font-serif font-bold mb-4">" {quote.text} "</div>
+      <div className="text-2xl font-serif font-bold mb-4">" {quote.text} "</div>
       <div className="text-lg font-medium text-gray-300">- {quote.author}</div>
     </div>
   );
